@@ -1,207 +1,235 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Learn Maths (from MASH)</title>
-<link href="./css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="./assets/textresize.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Molengo&amp;v1' rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1' rel='stylesheet' type='text/css' />
-<!--<script type="text/javascript">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Learn Maths (from MASH)</title>
+    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="./assets/textresize.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Molengo&amp;v1' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1' rel='stylesheet' type='text/css'/>
+    <!--<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24626612-1']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24626612-1']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-</script>-->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
-    ga('create', 'UA-60278079-1', 'auto');
-    ga('send', 'pageview');
-    
-  </script>
-<script type="text/javascript">
-  function myfunction(){
-  var lengths = [0,4,2,4,3,4,4,3,3,4,3,4,3,2,2];
-  var lengthdone = 0;
-  var results1 = {VA: 0, VR: 0, VK: 0, AV: 0, AR: 0, AK: 0, RV: 0, RA: 0, RK: 0, KV: 0, KA: 0, KR: 0};
-  var answers = {};
-  var elements = document.forms.form1.getElementsByTagName("input");
-  for(var i = 1; i < 15; i++){//for each question
-    for(var j = 1; j < lengths[i]; j++){//loop through each of the inputs to the question
-      for(var k = j; k < lengths[i]; k++){//loop through the inputs to the question 'after' that one??
-        //A R V K
-        //i = 1; j = 1; k = 1: q1_1 + q1_2 AR 1 2
-        //i = 1; j = 1; k = 2: q1_1 + q1_3 AV 1 3
-        //i = 1; j = 1; k = 3: q1_1 + q1_4 AK 1 4
-        //i = 1; j = 2; k = 2: q1_2 + q1_3 RV 2 3
-        //i = 1; j = 2; k = 3: q1_2 + q1_4 RK 2 4
-        //i = 1; j = 3; k = 3: q1_3 + q1_4 VK 3 4
-	//A R
-        //i = 2; j = 1; k = 1: q2_1 + q2_2 AR 5 6
-        //I guess that this might make sense as they are reported in order of preference.
-        //lengthdone is because we have a flat datastructure as input
-        //taking away another 1 because the elements array will number from 0 and all else counts from 1
-        results1[elements[lengthdone+i+j-1-1].value + elements[lengthdone+i+k-1].value]++;
-      }
-    }
-    lengthdone = lengthdone + lengths[i] - 1;
-  }
-  var myV = results1['VA']+results1['VR']+results1['VK']-results1['AV']-results1['RV']-results1['KV'];
-  var myA = results1['AV']+results1['AR']+results1['AK']-results1['VA']-results1['RA']-results1['KA'];
-  var myR = results1['RV']+results1['RA']+results1['RK']-results1['VR']-results1['AR']-results1['KR'];
-  var myK = results1['KV']+results1['KA']+results1['KR']-results1['VK']-results1['AK']-results1['RK'];
-  var repV = myV+27;
-  var repA = myA+27;
-  var repR = myR+27;
-  var repK = myK+27;
-  var barV = 108-repV*2;
-  var barA = 108-repA*2;
-  var barR = 108-repR*2;
-  var barK = 108-repK*2;
-  //Now we need to inject this into the page somehow... 
-  var everything = document.getElementById("everything");
-  alert("Visual: " + repV + ". Auditory: " + repA + ". Reading/Writing: " + repR + ". Kinaesthetic: " + repK + ".");
-  var all = "<h2>Learning Modes</h2>";
-  all = all.concat("<p>The results of your test to determine personal learning preferences: </p>");
-  all = all.concat('<div class="logoco" >'); 
-  all = all.concat('<div id="vis_bar" class="chart" style="background-image:url(images/vis_bar.gif)" >'); 
-  all = all.concat('<div id="vis_rate" class="chart2" style="height:' + barV + 'px;margin:0px;">&nbsp;</div></div>'); 
-  all = all.concat(repV + "</div>");
-  all = all.concat('<div class="logoco" >'); 
-  all = all.concat('<div id="aud_bar" class="chart" style="background-image:url(images/aud_bar.gif)" >');
-  all = all.concat('<div id="aud_rate" class="chart2" style="height:' + barA + 'px;margin:0px;">&nbsp;</div></div>');
-  all = all.concat(repA + "</div>");
-  all = all.concat('<div class="logoco" >'); 
-  all = all.concat('<div id="raw_bar" class="chart" style="background-image:url(images/raw_bar.gif)" >');
-  all = all.concat('<div id="raw_rate" class="chart2" style="height:' + barR + 'px;margin:0px;">&nbsp;</div></div>');
-  all = all.concat(repR + "</div>");
-  all = all.concat('<div class="logoco" >'); 
-  all = all.concat('<div id="kin_bar" class="chart" style="background-image:url(images/kin_bar.gif)" >');
-  all = all.concat('<div id="kin_rate" class="chart2" style="height:' + barK + 'px;margin:0px;">&nbsp;</div></div>');
-  all = all.concat(repK + "</div>");
-  all = all.concat('<div class="logoco" style="min-width:200px; vertical-align:middle; margin-left:30px; height:150px;" >');
-  all = all.concat('<div id="scores1" class="chart2" style="border: solid thin #603; min-width:200px;">');
-  all = all.concat('Scores:<br /><a href="#vis_desc"><strong>Visual: </strong>' + repV + '</a><br /><a href="#aud_desc"><strong>Auditory: </strong>' + repA + '</a><br /><a href="#raw_desc"><strong>Reading/Writing: </strong>' + repR + '</a><br /><a href="#kin_desc"><strong>Kinaesthetic: </strong>' + repK + '</a></div></div>');
+    </script>-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  all = all.concat('<p style="clear:both;">These results are not definitive, but you should use them to think about how you can adapt your learning to suit you better. Remember you will always learn best if you use a mixture of learning styles, but playing to your strengths may help with more difficult topics.</p>');
-  all = all.concat('<p style="clear:both;">The list below gives some advice on how you can adapt your learning. Ideas and examples are available in the <a href="some-ideas.shtml">some ideas</a> section.</p>');
+        ga('create', 'UA-60278079-1', 'auto');
+        ga('send', 'pageview');
 
-  var reses = new Array();
-  reses.push({name: 'printvis', val: repV}); 
-  reses.push({name: 'printaud', val: repA});
-  reses.push({name: 'printraw', val: repR});
-  reses.push({name: 'printkin', val: repK});
-  reses.sort(function (a, b) {
-  return a.val - b.val;
-  });
-  alert(reses[0].name + "(" + reses[0].val + ")");
+    </script>
+    <script type="text/javascript">
 
-  function printkin(){
-   return "AHA";
-  }
+        function printvis(num) {
+            return "hallo " + num;
+        }
 
-  var tester = eval("printkin();");
-
-  all = all.concat('This is a test ' + tester);
-
-  //for(var i = 0; i < 4; i++){
-  //window[reses[i].name](reses[i].val);
-  var tester2 = window["printkin"]();
-  all = all.concat('This is a second test ' + tester2);
-  //}
+        function printaud(num) {
+            return "aud " + num;
+        }
 
 
-  everything.innerHTML = all;
-  return false;
-  }
-</script>
+        function printraw(num) {
+            return "raw " + num;
+        }
+
+
+        function printkin(num) {
+            return "kins " + num;
+        }
+
+        function myfunction() {
+            var lengths = [0, 4, 2, 4, 3, 4, 4, 3, 3, 4, 3, 4, 3, 2, 2];
+            var lengthdone = 0;
+            var results1 = {VA: 0, VR: 0, VK: 0, AV: 0, AR: 0, AK: 0, RV: 0, RA: 0, RK: 0, KV: 0, KA: 0, KR: 0};
+            var answers = {};
+            var elements = document.forms.form1.getElementsByTagName("input");
+            for (var i = 1; i < 15; i++) {//for each question
+                for (var j = 1; j < lengths[i]; j++) {//loop through each of the inputs to the question
+                    for (var k = j; k < lengths[i]; k++) {//loop through the inputs to the question 'after' that one??
+                        //A R V K
+                        //i = 1; j = 1; k = 1: q1_1 + q1_2 AR 1 2
+                        //i = 1; j = 1; k = 2: q1_1 + q1_3 AV 1 3
+                        //i = 1; j = 1; k = 3: q1_1 + q1_4 AK 1 4
+                        //i = 1; j = 2; k = 2: q1_2 + q1_3 RV 2 3
+                        //i = 1; j = 2; k = 3: q1_2 + q1_4 RK 2 4
+                        //i = 1; j = 3; k = 3: q1_3 + q1_4 VK 3 4
+                        //A R
+                        //i = 2; j = 1; k = 1: q2_1 + q2_2 AR 5 6
+                        //I guess that this might make sense as they are reported in order of preference.
+                        //lengthdone is because we have a flat datastructure as input
+                        //taking away another 1 because the elements array will number from 0 and all else counts from 1
+                        results1[elements[lengthdone + i + j - 1 - 1].value + elements[lengthdone + i + k - 1].value]++;
+                    }
+                }
+                lengthdone = lengthdone + lengths[i] - 1;
+            }
+            var myV = results1['VA'] + results1['VR'] + results1['VK'] - results1['AV'] - results1['RV'] - results1['KV'];
+            var myA = results1['AV'] + results1['AR'] + results1['AK'] - results1['VA'] - results1['RA'] - results1['KA'];
+            var myR = results1['RV'] + results1['RA'] + results1['RK'] - results1['VR'] - results1['AR'] - results1['KR'];
+            var myK = results1['KV'] + results1['KA'] + results1['KR'] - results1['VK'] - results1['AK'] - results1['RK'];
+            var repV = myV + 27;
+            var repA = myA + 27;
+            var repR = myR + 27;
+            var repK = myK + 27;
+            var barV = 108 - repV * 2;
+            var barA = 108 - repA * 2;
+            var barR = 108 - repR * 2;
+            var barK = 108 - repK * 2;
+            //Now we need to inject this into the page somehow...
+            var everything = document.getElementById("everything");
+            console.log("Visual: " + repV + ". Auditory: " + repA + ". Reading/Writing: " + repR + ". Kinaesthetic: " + repK + ".");
+            var all = "<h2>Learning Modes</h2>";
+            all = all.concat("<p>The results of your test to determine personal learning preferences: </p>");
+            all = all.concat('<div class="logoco" >');
+            all = all.concat('<div id="vis_bar" class="chart" style="background-image:url(images/vis_bar.gif)" >');
+            all = all.concat('<div id="vis_rate" class="chart2" style="height:' + barV + 'px;margin:0px;">&nbsp;</div></div>');
+            all = all.concat(repV + "</div>");
+            all = all.concat('<div class="logoco" >');
+            all = all.concat('<div id="aud_bar" class="chart" style="background-image:url(images/aud_bar.gif)" >');
+            all = all.concat('<div id="aud_rate" class="chart2" style="height:' + barA + 'px;margin:0px;">&nbsp;</div></div>');
+            all = all.concat(repA + "</div>");
+            all = all.concat('<div class="logoco" >');
+            all = all.concat('<div id="raw_bar" class="chart" style="background-image:url(images/raw_bar.gif)" >');
+            all = all.concat('<div id="raw_rate" class="chart2" style="height:' + barR + 'px;margin:0px;">&nbsp;</div></div>');
+            all = all.concat(repR + "</div>");
+            all = all.concat('<div class="logoco" >');
+            all = all.concat('<div id="kin_bar" class="chart" style="background-image:url(images/kin_bar.gif)" >');
+            all = all.concat('<div id="kin_rate" class="chart2" style="height:' + barK + 'px;margin:0px;">&nbsp;</div></div>');
+            all = all.concat(repK + "</div>");
+            all = all.concat('<div class="logoco" style="min-width:200px; vertical-align:middle; margin-left:30px; height:150px;" >');
+            all = all.concat('<div id="scores1" class="chart2" style="border: solid thin #603; min-width:200px;">');
+            all = all.concat('Scores:<br /><a href="#vis_desc"><strong>Visual: </strong>' + repV + '</a><br /><a href="#aud_desc"><strong>Auditory: </strong>' + repA + '</a><br /><a href="#raw_desc"><strong>Reading/Writing: </strong>' + repR + '</a><br /><a href="#kin_desc"><strong>Kinaesthetic: </strong>' + repK + '</a></div></div>');
+
+            all = all.concat('<p style="clear:both;">These results are not definitive, but you should use them to think about how you can adapt your learning to suit you better. Remember you will always learn best if you use a mixture of learning styles, but playing to your strengths may help with more difficult topics.</p>');
+            all = all.concat('<p style="clear:both;">The list below gives some advice on how you can adapt your learning. Ideas and examples are available in the <a href="some-ideas.shtml">some ideas</a> section.</p>');
+
+            var reses = new Array();
+
+            reses.push({fn: printvis, val: repV});
+            reses.push({fn: printaud, val: repA});
+            reses.push({fn: printraw, val: repR});
+            reses.push({fn: printkin, val: repK});
+
+            reses.sort(function (a, b) {
+                return a.val - b.val;
+            });
+
+
+            for (var i = 0; i < reses.length; i++) {
+                all += reses[i].fn(reses[i].val) + "<p>";
+            }
+
+            everything.innerHTML = all;
+            return false;
+        }
+    </script>
 </head>
 <body>
-<div class="wrapper-heading" id="wrapper-heading">Learn Maths<div class="heading-right">
-<a href="http://www.bath.ac.uk/study/mash"><img src="./images/mash.gif" width="120" height="60" alt="MASH" /></a>
-<div class="textsizes"><a href="#" id="textnormal" title="text size normal" style="font-size:13px;left:0px;">A</a><a href="#" id="textlarge" title="text size larger" style="font-size:15px;left:40px;">A</a><a href="#" id="textlargest" title="text size largest" style="font-size:17px;left:80px;">A</a></div>
-</div></div>
-<div class="wrapper-main" id="wrapper-main">
-<div class="left1"><div class="ics" id="ics" style=""></div>
-  <div class="menu" id="mainmenu"><ul>
-  <li><a href="index.html">Introduction</a></li>
-  <li><a href="modes.html">Learning Modes</a></li>
-  <li><a href="thinking.html">Thinking Styles</a></li>
-  <li><a href="some-ideas.html">Some ideas</a></li>
-  <li><a href="further-reading.html">Further reading</a></li>
-  </ul></div></div>
-  <div class="right1">
-    <div class="body-text" id="content">
-
-<div id="everything">
-<form id="form1" name="form1" onsubmit="return myfunction();">
-  <p>
-    Press the Submit button to see a sample response to the Learning Modes test
-      <input name="q1_1" type="hidden" id="q1_1" value="A" />
-      <input name="q1_2" type="hidden" id="q1_2" value="R" />
-      <input name="q1_3" type="hidden" id="q1_3" value="V" />
-      <input name="q1_4" type="hidden" id="q1_4" value="K" />
-      <input name="q2_1" type="hidden" id="q2_1" value="A" />
-      <input name="q2_2" type="hidden" id="q2_2" value="R" />
-      <input name="q3_1" type="hidden" id="q3_1" value="K" />
-      <input name="q3_2" type="hidden" id="q3_2" value="A" />
-      <input name="q3_3" type="hidden" id="q3_3" value="V" />
-      <input name="q3_4" type="hidden" id="q3_4" value="R" />
-      <input name="q4_1" type="hidden" id="q4_1" value="R" />
-      <input name="q4_2" type="hidden" id="q4_2" value="A" />
-      <input name="q4_3" type="hidden" id="q4_3" value="K" /> 
-      <input name="q5_1" type="hidden" id="q5_1" value="R" />
-      <input name="q5_2" type="hidden" id="q5_2" value="A" />
-      <input name="q5_3" type="hidden" id="q5_3" value="V" />
-      <input name="q5_4" type="hidden" id="q5_4" value="K" />
-      <input name="q6_1" type="hidden" id="q6_1" value="A" />
-      <input name="q6_2" type="hidden" id="q6_2" value="V" />
-      <input name="q6_3" type="hidden" id="q6_3" value="R" />
-      <input name="q6_4" type="hidden" id="q6_4" value="K" />
-      <input name="q7_1" type="hidden" id="q7_1" value="R" />
-      <input name="q7_2" type="hidden" id="q7_2" value="V" />
-      <input name="q7_3" type="hidden" id="q7_3" value="K" /> 
-      <input name="q8_1" type="hidden" id="q8_1" value="V" />
-      <input name="q8_2" type="hidden" id="q8_2" value="A" />
-      <input name="q8_3" type="hidden" id="q8_3" value="R" /> 
-      <input name="q9_1" type="hidden" id="q9_1" value="K" />
-      <input name="q9_2" type="hidden" id="q9_2" value="R" />
-      <input name="q9_3" type="hidden" id="q9_3" value="V" />
-      <input name="q9_4" type="hidden" id="q9_4" value="A" />
-      <input name="q10_1" type="hidden" id="q10_1" value="A" />
-      <input name="q10_2" type="hidden" id="q10_2" value="V" />
-      <input name="q10_3" type="hidden" id="q10_3" value="K" />
-      <input name="q11_1" type="hidden" id="q11_1" value="K" />
-      <input name="q11_2" type="hidden" id="q11_2" value="A" />
-      <input name="q11_3" type="hidden" id="q11_3" value="R" />
-      <input name="q11_4" type="hidden" id="q11_4" value="V" />
-      <input name="q12_1" type="hidden" id="q12_1" value="V" />
-      <input name="q12_2" type="hidden" id="q12_2" value="K" />
-      <input name="q12_3" type="hidden" id="q12_3" value="A" />
-      <input name="q13_1" type="hidden" id="q13_1" value="V" />
-      <input name="q13_2" type="hidden" id="q13_2" value="R" /> 
-      <input name="q14_1" type="hidden" id="q14_1" value="R" />
-      <input name="q14_2" type="hidden" id="q14_2" value="K" /> 
-        </p>
-  <p>
-    <label>
-      <input type="submit" name="Submit" id="Submit" value="Submit" />
-    </label>
-  </p>
-</form>
+<div class="wrapper-heading" id="wrapper-heading">Learn Maths
+    <div class="heading-right">
+        <a href="http://www.bath.ac.uk/study/mash"><img src="./images/mash.gif" width="120" height="60" alt="MASH"/></a>
+        <div class="textsizes"><a href="#" id="textnormal" title="text size normal"
+                                  style="font-size:13px;left:0px;">A</a><a href="#" id="textlarge"
+                                                                           title="text size larger"
+                                                                           style="font-size:15px;left:40px;">A</a><a
+                href="#" id="textlargest" title="text size largest" style="font-size:17px;left:80px;">A</a></div>
+    </div>
 </div>
-    </div></div>
+<div class="wrapper-main" id="wrapper-main">
+    <div class="left1">
+        <div class="ics" id="ics" style=""></div>
+        <div class="menu" id="mainmenu">
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="modes.html">Learning Modes</a></li>
+                <li><a href="thinking.html">Thinking Styles</a></li>
+                <li><a href="some-ideas.html">Some ideas</a></li>
+                <li><a href="further-reading.html">Further reading</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="right1">
+        <div class="body-text" id="content">
+
+            <div id="everything">
+                <form id="form1" name="form1" onsubmit="return myfunction();">
+                    <p>
+                        Press the Submit button to see a sample response to the Learning Modes test
+                        <input name="q1_1" type="hidden" id="q1_1" value="A"/>
+                        <input name="q1_2" type="hidden" id="q1_2" value="R"/>
+                        <input name="q1_3" type="hidden" id="q1_3" value="V"/>
+                        <input name="q1_4" type="hidden" id="q1_4" value="K"/>
+                        <input name="q2_1" type="hidden" id="q2_1" value="A"/>
+                        <input name="q2_2" type="hidden" id="q2_2" value="R"/>
+                        <input name="q3_1" type="hidden" id="q3_1" value="K"/>
+                        <input name="q3_2" type="hidden" id="q3_2" value="A"/>
+                        <input name="q3_3" type="hidden" id="q3_3" value="V"/>
+                        <input name="q3_4" type="hidden" id="q3_4" value="R"/>
+                        <input name="q4_1" type="hidden" id="q4_1" value="R"/>
+                        <input name="q4_2" type="hidden" id="q4_2" value="A"/>
+                        <input name="q4_3" type="hidden" id="q4_3" value="K"/>
+                        <input name="q5_1" type="hidden" id="q5_1" value="R"/>
+                        <input name="q5_2" type="hidden" id="q5_2" value="A"/>
+                        <input name="q5_3" type="hidden" id="q5_3" value="V"/>
+                        <input name="q5_4" type="hidden" id="q5_4" value="K"/>
+                        <input name="q6_1" type="hidden" id="q6_1" value="A"/>
+                        <input name="q6_2" type="hidden" id="q6_2" value="V"/>
+                        <input name="q6_3" type="hidden" id="q6_3" value="R"/>
+                        <input name="q6_4" type="hidden" id="q6_4" value="K"/>
+                        <input name="q7_1" type="hidden" id="q7_1" value="R"/>
+                        <input name="q7_2" type="hidden" id="q7_2" value="V"/>
+                        <input name="q7_3" type="hidden" id="q7_3" value="K"/>
+                        <input name="q8_1" type="hidden" id="q8_1" value="V"/>
+                        <input name="q8_2" type="hidden" id="q8_2" value="A"/>
+                        <input name="q8_3" type="hidden" id="q8_3" value="R"/>
+                        <input name="q9_1" type="hidden" id="q9_1" value="K"/>
+                        <input name="q9_2" type="hidden" id="q9_2" value="R"/>
+                        <input name="q9_3" type="hidden" id="q9_3" value="V"/>
+                        <input name="q9_4" type="hidden" id="q9_4" value="A"/>
+                        <input name="q10_1" type="hidden" id="q10_1" value="A"/>
+                        <input name="q10_2" type="hidden" id="q10_2" value="V"/>
+                        <input name="q10_3" type="hidden" id="q10_3" value="K"/>
+                        <input name="q11_1" type="hidden" id="q11_1" value="K"/>
+                        <input name="q11_2" type="hidden" id="q11_2" value="A"/>
+                        <input name="q11_3" type="hidden" id="q11_3" value="R"/>
+                        <input name="q11_4" type="hidden" id="q11_4" value="V"/>
+                        <input name="q12_1" type="hidden" id="q12_1" value="V"/>
+                        <input name="q12_2" type="hidden" id="q12_2" value="K"/>
+                        <input name="q12_3" type="hidden" id="q12_3" value="A"/>
+                        <input name="q13_1" type="hidden" id="q13_1" value="V"/>
+                        <input name="q13_2" type="hidden" id="q13_2" value="R"/>
+                        <input name="q14_1" type="hidden" id="q14_1" value="R"/>
+                        <input name="q14_2" type="hidden" id="q14_2" value="K"/>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="button" name="Submit" id="Submit" value="Submit" onclick="myfunction();"/>
+                        </label>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="footer" id="footer">Created by Andrew Kennedy as part of a summer internship with sigma-sw &amp; MASH</div>
 
