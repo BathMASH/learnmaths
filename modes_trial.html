@@ -59,29 +59,19 @@
 
         function myfunction() {
             var lengths = [0, 4, 2, 4, 3, 4, 4, 3, 3, 4, 3, 4, 3, 2, 2];
-            var lengthdone = 0;
             var results1 = {VA: 0, VR: 0, VK: 0, AV: 0, AR: 0, AK: 0, RV: 0, RA: 0, RK: 0, KV: 0, KA: 0, KR: 0};
-            var answers = {};
-            var elements = document.forms.form1.getElementsByTagName("input");
-            for (var i = 1; i < 15; i++) {//for each question
-                for (var j = 1; j < lengths[i]; j++) {//loop through each of the inputs to the question
-                    for (var k = j; k < lengths[i]; k++) {//loop through the inputs to the question 'after' that one??
-                        //A R V K
-                        //i = 1; j = 1; k = 1: q1_1 + q1_2 AR 1 2
-                        //i = 1; j = 1; k = 2: q1_1 + q1_3 AV 1 3
-                        //i = 1; j = 1; k = 3: q1_1 + q1_4 AK 1 4
-                        //i = 1; j = 2; k = 2: q1_2 + q1_3 RV 2 3
-                        //i = 1; j = 2; k = 3: q1_2 + q1_4 RK 2 4
-                        //i = 1; j = 3; k = 3: q1_3 + q1_4 VK 3 4
-                        //A R
-                        //i = 2; j = 1; k = 1: q2_1 + q2_2 AR 5 6
-                        //I guess that this might make sense as they are reported in order of preference.
-                        //lengthdone is because we have a flat datastructure as input
-                        //taking away another 1 because the elements array will number from 0 and all else counts from 1
-                        results1[elements[lengthdone + i + j - 1 - 1].value + elements[lengthdone + i + k - 1].value]++;
+            
+            for (var ii=1;  ii<lengths.length; ii++) {
+                for (var jj=1;jj<lengths[ii];jj++) {
+                    for (var kk=jj;kk<lengths[ii];kk++){
+                        var key = document.getElementById("q" + ii + "_" + jj).value +
+                            document.getElementById("q" + ii + "_" + (kk+1)).value;
+                        if(!results1.hasOwnProperty(key)){
+                            console.log("Bad value" + key);
+                        }
+                        results1[key]++;
                     }
                 }
-                lengthdone = lengthdone + lengths[i] - 1;
             }
             var myV = results1['VA'] + results1['VR'] + results1['VK'] - results1['AV'] - results1['RV'] - results1['KV'];
             var myA = results1['AV'] + results1['AR'] + results1['AK'] - results1['VA'] - results1['RA'] - results1['KA'];
@@ -131,7 +121,7 @@
             reses.push({fn: printkin, val: repK});
 
             reses.sort(function (a, b) {
-                return a.val - b.val;
+                return b.val - a.val;
             });
 
 
@@ -168,6 +158,7 @@
             </ul>
         </div>
     </div>
+
     <div class="right1">
         <div class="body-text" id="content">
 
