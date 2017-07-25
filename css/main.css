@@ -1,0 +1,226 @@
+html {
+	font-family: "Molengo", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #660033;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#660033), to(#2D0016)); /* for webkit browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#660033', endColorstr='#2D0016'); /* for IE */
+	background-image: -moz-linear-gradient(top, #660033, #2D0016); /* for firefox 3.6+ */ 
+	background-position:bottom;
+	min-height:100%;
+	font-size: 1.2em;
+}
+a{
+	color:#603;
+	text-decoration:underline;
+}
+.wrapper-main {
+	background-color: #fff;
+	min-width: 750px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.left1 {
+	float: left;
+	width: 215px;
+	height: inherit;
+}
+.right1 {
+	padding: 15px;
+	padding-top: 55px;
+	min-height: 300px;
+	margin-left: 230px;
+}
+.footer{
+	color: #FFF;
+	min-width: 400px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: smaller;
+	text-align: center;
+}
+.ics {
+	position:relative;
+	left: -101px;
+	top: -101px;
+	z-index: -1;
+	width: 310px;
+	height: 278px;
+	background-image: url(../images/ics.gif);
+	background-repeat: no-repeat;
+}
+.wrapper-heading {
+	height: 150px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(../images/heading.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -999px;
+}
+.heading-right {
+	float:right;
+	text-indent: 0px;
+	position: relative;
+	top: 30px;
+}
+.menu {
+	background-color:#603;
+	width: 175px;
+	margin: 15px;
+	margin-top: -240px;
+	left: 25px;
+	padding: 8px;
+	color:#FFF;
+	font-size: 1.25em;
+	font-weight: bold;
+	font-family: "Maven Pro";
+	border: 1px solid #2D0016;
+	line-height: 150%;
+}
+.menu ul{
+	list-style: none;
+	list-style-position: inside;
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.menu a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.menu a:hover{
+	background-color:#CF0;
+	color:#000;
+}
+h5 {
+	font-family: "Maven Pro", sans-serif;
+	font-size: 1.3em;
+	color:#603;
+}
+h4 {
+	font-family: "Maven Pro", sans-serif;
+	font-size: 1.4em;
+	color: #603;
+}
+h3 {
+	font-family: "Maven Pro", sans-serif;
+	font-size: 1.8em;
+	color: #603;
+}
+h2 {
+	font-family: "Maven Pro", sans-serif;
+	font-size: 2em;
+	color: #603;
+	background-color: #cf0;
+	background-image: url(../images/tri.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin: 0px;
+	padding-left: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 20px;
+	display: inline-block;
+}
+.textsizes {
+	background-color: #CF0;
+	display: block;
+	width: 120px;
+	height: 24px;
+}
+.textsizes a{
+	width: 40px;
+	float: left;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: auto;
+	margin-bottom: auto;
+	position:absolute;
+	bottom: 0px;
+}
+.textsizes a:hover {
+	text-decoration: underline;
+}
+img {
+	border: none;
+}
+.boxlg {
+	background-color:#F7FFD9;
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding:10px;
+}
+.boxgr {
+	background-color:#EFE5EA;
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding:10px;
+}
+.logodisp {
+	display:block;
+	float:left;
+	text-align:center;
+	width:150px;
+}
+#content ul {
+	list-style-image: url(../images/bullet.gif);
+}
+.equations {
+	 font-size:2em;
+	 text-align:center;
+}
+.equations a {
+	color:#825;
+	text-decoration:none;
+}
+.equations a:hover {
+	color:#825;
+	text-decoration:underline;
+}
+.chart {
+	background-color:#FFF;
+	display:block;
+	background-repeat:no-repeat;
+	width:50px;
+	height:158px;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+}
+.chart2 {
+	background-color:#FFF;
+	display:block;
+	width:50px;
+	float:left;
+	margin-left:0px;
+	margin-right:0px;
+}
+.logoco {
+	display:block;
+	width:70px;
+	float:left;
+	text-align:center;
+}
+lh {
+	font-weight:bold;
+}
+.logofloat {
+	width:100px;
+	height:100px;
+	float:right;
+	clear:right;
+}
+#scores1 a{
+	text-decoration:none;
+}

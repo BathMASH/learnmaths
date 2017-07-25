@@ -1,0 +1,47 @@
+---
+#Front matter
+---
+{% include head-menu-math.html %}
+<!-- removed hash: include virtual="head-menu-math.html" -->
+<script>
+function changegraph (to, width, height){
+	document.getElementById('graph1').innerHTML='<img src="images/'+to+'" width="'+width+'" height="'+height+'" alt="Graph showing convergence" />';
+}
+</script>
+  <h3>Using examples</h3>
+  <p>Look for examples in the notes or a recommended textbook and show how it relates to the definition. For some definitions it will be easy to come up with diagrams, for others it will be harder. If you can draw a diagram, try to use it to illustrate all the key points.</p>
+  <p>For the example diagram below showing <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+  <mrow>
+    <msubsup>
+      <mo fence="false" stretchy="false">}</mo>
+      <mrow>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mrow>
+        <mo movablelimits="true">inf</mo>
+      </mrow>
+    </msubsup>
+  </mrow>
+</math>, identify what various parts of the graph show.</p>
+<div style="text-align:center"><div id="graph1"><img src="images/con1.png" width="597" height="350" alt="Graph showing convergence" /></div>
+Alternative images: <a href="images/con1large.png">large</a> <a href="images/con1.svg">SVG</a></div>
+<div id="instruction"></div>
+<div class="equations"> 
+  <p>The real sequence \(\{\)<a href="javascript:funan();">\(a_n\)</a>\(\}_{n=1}^{\inf}\) converges to the real limit <a href="javascript:">\(l\)</a> if for every <a href="javascript:">\(\varepsilon\)</a> \(&gt; 0\) there exists an <a href="javascript:">\(N\)</a> \(\in\) <a href="javascript:">\(\mathbb{N}\)</a> such that for every \(n \ge N\) \(|a_n - l|&lt; \varepsilon\).</p>
+</div>
+<script type="text/javascript">
+document.getElementById('instruction').innerHTML='<p><b>What does A represent?</b> (click on the symbol(s) in the definition)</p>';
+function funan (){
+	document.getElementById('instruction').innerHTML='<p><b>Correct</b></p>';
+}
+</script>
+{% include footer.html %}
+<!-- removed hash: include virtual="footer.html" -->
