@@ -52,12 +52,11 @@ function printraw(num) {
     raw += "<p>Your score for the reading/writing learning style: " + num + "</p>";
     raw += '<ul>';
     raw += '<lh>Reading/Writing learners...</lh>';
-    raw += '<li>like information presented as words - this may  be blocks of text or lists of bullet points</li>
-<li>will read mathematical symbols and operators as if they are text</li>';
+    raw += '<li>like information presented as words - this may  be blocks of text or lists of bullet points</li><li>will read mathematical symbols and operators as if they are text</li>';
     raw += '</ul>';
     raw += '<ul>';
     raw += '<lh>If this appeals to you, you could...</lh>';
-    raw += '<li>make a short summary of a new concept and read  it back. Using different words and phrases where possible will help you ensure  you don&#39;t just copy parrot-fashion.</li>';
+    raw += '<li>make a short summary of a new concept and read  it back. Using different words and phrases where possible will help you ensure  you don\'t just copy parrot-fashion.</li>';
     raw += '<li>when faced with a diagram, label it using words  and write a brief description of what it shows.</li>';
     raw += '</ul>';
     raw += '</div>';
