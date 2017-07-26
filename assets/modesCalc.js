@@ -124,7 +124,7 @@ function modesCalc() {
     var everything = document.getElementById("everything");
     console.log("Visual: " + repV + ". Auditory: " + repA + ". Reading/Writing: " + repR + ". Kinaesthetic: " + repK + ".");
 
-    var all = "<h2>Learning Modes</h2>";
+    var all = "";
     all += "<p>The results of your test to determine personal learning preferences: </p>";
     all += '<div class="logoco" >';
     all += '<div id="vis_bar" class="chart" style="background-image:url(images/vis_bar.gif)" >';
