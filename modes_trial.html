@@ -5,6 +5,8 @@
     <title>Learn Maths (from MASH)</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./assets/textresize.js"></script>
+    <script type="text/javascript" src="assets/radiohier.js"></script>
+    <script type="text/javascript" src="./assets/modesCalc.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Molengo&amp;v1' rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1' rel='stylesheet' type='text/css'/>
     <!--<script type="text/javascript">
@@ -37,102 +39,6 @@
         ga('send', 'pageview');
 
     </script>
-    <script type="text/javascript">
-
-        function printvis(num) {
-            return "hallo " + num;
-        }
-
-        function printaud(num) {
-            return "aud " + num;
-        }
-
-
-        function printraw(num) {
-            return "raw " + num;
-        }
-
-
-        function printkin(num) {
-            return "kins " + num;
-        }
-
-        function myfunction() {
-            var lengths = [0, 4, 2, 4, 3, 4, 4, 3, 3, 4, 3, 4, 3, 2, 2];
-            var results1 = {VA: 0, VR: 0, VK: 0, AV: 0, AR: 0, AK: 0, RV: 0, RA: 0, RK: 0, KV: 0, KA: 0, KR: 0};
-            
-            for (var ii=1;  ii<lengths.length; ii++) {
-                for (var jj=1;jj<lengths[ii];jj++) {
-                    for (var kk=jj;kk<lengths[ii];kk++){
-                        var key = document.getElementById("q" + ii + "_" + jj).value +
-                            document.getElementById("q" + ii + "_" + (kk+1)).value;
-                        if(!results1.hasOwnProperty(key)){
-                            console.log("Bad value" + key);
-                        }
-                        results1[key]++;
-                    }
-                }
-            }
-            var myV = results1['VA'] + results1['VR'] + results1['VK'] - results1['AV'] - results1['RV'] - results1['KV'];
-            var myA = results1['AV'] + results1['AR'] + results1['AK'] - results1['VA'] - results1['RA'] - results1['KA'];
-            var myR = results1['RV'] + results1['RA'] + results1['RK'] - results1['VR'] - results1['AR'] - results1['KR'];
-            var myK = results1['KV'] + results1['KA'] + results1['KR'] - results1['VK'] - results1['AK'] - results1['RK'];
-            var repV = myV + 27;
-            var repA = myA + 27;
-            var repR = myR + 27;
-            var repK = myK + 27;
-            var barV = 108 - repV * 2;
-            var barA = 108 - repA * 2;
-            var barR = 108 - repR * 2;
-            var barK = 108 - repK * 2;
-            //Now we need to inject this into the page somehow...
-            var everything = document.getElementById("everything");
-            console.log("Visual: " + repV + ". Auditory: " + repA + ". Reading/Writing: " + repR + ". Kinaesthetic: " + repK + ".");
-            var all = "<h2>Learning Modes</h2>";
-            all = all.concat("<p>The results of your test to determine personal learning preferences: </p>");
-            all = all.concat('<div class="logoco" >');
-            all = all.concat('<div id="vis_bar" class="chart" style="background-image:url(images/vis_bar.gif)" >');
-            all = all.concat('<div id="vis_rate" class="chart2" style="height:' + barV + 'px;margin:0px;">&nbsp;</div></div>');
-            all = all.concat(repV + "</div>");
-            all = all.concat('<div class="logoco" >');
-            all = all.concat('<div id="aud_bar" class="chart" style="background-image:url(images/aud_bar.gif)" >');
-            all = all.concat('<div id="aud_rate" class="chart2" style="height:' + barA + 'px;margin:0px;">&nbsp;</div></div>');
-            all = all.concat(repA + "</div>");
-            all = all.concat('<div class="logoco" >');
-            all = all.concat('<div id="raw_bar" class="chart" style="background-image:url(images/raw_bar.gif)" >');
-            all = all.concat('<div id="raw_rate" class="chart2" style="height:' + barR + 'px;margin:0px;">&nbsp;</div></div>');
-            all = all.concat(repR + "</div>");
-            all = all.concat('<div class="logoco" >');
-            all = all.concat('<div id="kin_bar" class="chart" style="background-image:url(images/kin_bar.gif)" >');
-            all = all.concat('<div id="kin_rate" class="chart2" style="height:' + barK + 'px;margin:0px;">&nbsp;</div></div>');
-            all = all.concat(repK + "</div>");
-            all = all.concat('<div class="logoco" style="min-width:200px; vertical-align:middle; margin-left:30px; height:150px;" >');
-            all = all.concat('<div id="scores1" class="chart2" style="border: solid thin #603; min-width:200px;">');
-            all = all.concat('Scores:<br /><a href="#vis_desc"><strong>Visual: </strong>' + repV + '</a><br /><a href="#aud_desc"><strong>Auditory: </strong>' + repA + '</a><br /><a href="#raw_desc"><strong>Reading/Writing: </strong>' + repR + '</a><br /><a href="#kin_desc"><strong>Kinaesthetic: </strong>' + repK + '</a></div></div>');
-
-            all = all.concat('<p style="clear:both;">These results are not definitive, but you should use them to think about how you can adapt your learning to suit you better. Remember you will always learn best if you use a mixture of learning styles, but playing to your strengths may help with more difficult topics.</p>');
-            all = all.concat('<p style="clear:both;">The list below gives some advice on how you can adapt your learning. Ideas and examples are available in the <a href="some-ideas.shtml">some ideas</a> section.</p>');
-
-            var reses = new Array();
-
-            reses.push({fn: printvis, val: repV});
-            reses.push({fn: printaud, val: repA});
-            reses.push({fn: printraw, val: repR});
-            reses.push({fn: printkin, val: repK});
-
-            reses.sort(function (a, b) {
-                return b.val - a.val;
-            });
-
-
-            for (var i = 0; i < reses.length; i++) {
-                all += reses[i].fn(reses[i].val) + "<p>";
-            }
-
-            everything.innerHTML = all;
-            return false;
-        }
-    </script>
 </head>
 <body>
 <div class="wrapper-heading" id="wrapper-heading">Learn Maths
@@ -163,13 +69,30 @@
         <div class="body-text" id="content">
 
             <div id="everything">
-                <form id="form1" name="form1" onsubmit="return myfunction();">
+                <form id="form1" name="form1" onsubmit="return modesCalc();">
                     <p>
                         Press the Submit button to see a sample response to the Learning Modes test
-                        <input name="q1_1" type="hidden" id="q1_1" value="A"/>
+        <!-- Question 1-->
+        <div class="boxgr">
+        <div class="radiosq">I remember best by...</div><div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;</div><br />
+        <div class="radios2">summarising information in a chart or diagram</div>
+        <div class="radios"><input type="radio" name="q1_1" id="q1_V1" value="V" onChange="javascript:hier(1,'V',1,4);" /><input type="radio" name="q1_2" id="q1_V2" value="V" onChange="javascript:hier(1,'V',2,4);" /><input type="radio" name="q1_3" id="q1_V3" value="V" onChange="javascript:hier(1,'V',3,4);" /><input type="radio" name="q1_4" id="q1_V4" value="V" onChange="javascript:hier(1,'V',4,4);" /></div>
+        <br />
+        <div class="radios2">telling someone else the information</div>
+        <div class="radios"><input type="radio" name="q1_1" id="q1_A1" value="A" onChange="javascript:hier(1,'A',1,4);" /><input type="radio" name="q1_2" id="q1_A2" value="A" onChange="javascript:hier(1,'A',2,4);" /><input type="radio" name="q1_3" id="q1_A3" value="A" onChange="javascript:hier(1,'A',3,4);" /><input type="radio" name="q1_4" id="q1_A4" value="A" onChange="javascript:hier(1,'A',4,4);" /></div>
+        <br />
+        <div class="radios2">writing out a short summary and reading it again</div>
+        <div class="radios"><input type="radio" name="q1_1" id="q1_R1" value="R" onChange="javascript:hier(1,'R',1,4);" /><input type="radio" name="q1_2" id="q1_R2" value="R" onChange="javascript:hier(1,'R',2,4);" /><input type="radio" name="q1_3" id="q1_R3" value="R" onChange="javascript:hier(1,'R',3,4);" /><input type="radio" name="q1_4" id="q1_R4" value="R" onChange="javascript:hier(1,'R',4,4);" /></div>
+        <br />
+        <div class="radios2">writing out the information repeatedly</div>
+        <div class="radios"><input type="radio" name="q1_1" id="q1_K1" value="K" onChange="javascript:hier(1,'K',1,4);" /><input type="radio" name="q1_2" id="q1_K2" value="K" onChange="javascript:hier(1,'K',2,4);" /><input type="radio" name="q1_3" id="q1_K3" value="K" onChange="javascript:hier(1,'K',3,4);" /><input type="radio" name="q1_4" id="q1_K4" value="K" onChange="javascript:hier(1,'K',4,4);" /></div>
+        <br />
+        <div style="clear:both;"></div></div>
+
+                        <!--<input name="q1_1" type="hidden" id="q1_1" value="A"/>
                         <input name="q1_2" type="hidden" id="q1_2" value="R"/>
                         <input name="q1_3" type="hidden" id="q1_3" value="V"/>
-                        <input name="q1_4" type="hidden" id="q1_4" value="K"/>
+                        <input name="q1_4" type="hidden" id="q1_4" value="K"/>-->
                         <input name="q2_1" type="hidden" id="q2_1" value="A"/>
                         <input name="q2_2" type="hidden" id="q2_2" value="R"/>
                         <input name="q3_1" type="hidden" id="q3_1" value="K"/>
@@ -204,17 +127,45 @@
                         <input name="q11_2" type="hidden" id="q11_2" value="A"/>
                         <input name="q11_3" type="hidden" id="q11_3" value="R"/>
                         <input name="q11_4" type="hidden" id="q11_4" value="V"/>
-                        <input name="q12_1" type="hidden" id="q12_1" value="V"/>
+			<!-- Question 12 -->
+        <div class="boxlg">
+        <div class="radiosq">If someone doesn't understand something I've said I'm more likely to...</div>
+        <div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;</div><br />
+        <div class="radios2">use diagrams to try to explain (if possible)</div>
+        <div class="radios"><input type="radio" name="q12_1" id="q12_V1" value="V" onChange="javascript:hier(12,'V',1,3);" /><input type="radio" name="q12_2" id="q12_V2" value="V" onChange="javascript:hier(12,'V',2,3);" /><input type="radio" name="q12_3" id="q12_V3" value="V" onChange="javascript:hier(12,'V',3,3);" /></div><br />
+        <div class="radios2">rephrase my explanation until they understand</div>
+        <div class="radios"><input type="radio" name="q12_1" id="q12_A1" value="A" onChange="javascript:hier(12,'A',1,3);" /><input type="radio" name="q12_2" id="q12_A2" value="A" onChange="javascript:hier(12,'A',2,3);" /><input type="radio" name="q12_3" id="q12_A3" value="A" onChange="javascript:hier(12,'A',3,3);" /></div><br />
+        <div class="radios2">use my hands to try to explain, or if that fails start waving my arms around</div>
+        <div class="radios"><input type="radio" name="q12_1" id="q12_K1" value="K" onChange="javascript:hier(12,'K',1,3);" /><input type="radio" name="q12_2" id="q12_K2" value="K" onChange="javascript:hier(12,'K',2,3);" /><input type="radio" name="q12_3" id="q12_K3" value="K" onChange="javascript:hier(12,'K',3,3);" /></div>
+        <div style="clear:both;"></div>
+        </div>
+                        <!--<input name="q12_1" type="hidden" id="q12_1" value="V"/>
                         <input name="q12_2" type="hidden" id="q12_2" value="K"/>
-                        <input name="q12_3" type="hidden" id="q12_3" value="A"/>
+                        <input name="q12_3" type="hidden" id="q12_3" value="A"/>-->
                         <input name="q13_1" type="hidden" id="q13_1" value="V"/>
                         <input name="q13_2" type="hidden" id="q13_2" value="R"/>
-                        <input name="q14_1" type="hidden" id="q14_1" value="R"/>
-                        <input name="q14_2" type="hidden" id="q14_2" value="K"/>
+			<div class="boxlg">
+			  <div class="radiosq">I remember the storyline better after...</div>
+			  <div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;</div><br />
+			  <div class="radios2">watching the film</div>
+			  <div class="radios">
+			    <input type="radio" name="q14_1" id="q14_K1" value="K" onChange="javascript:hier(14,'K',1,2);"  />
+			    <input type="radio" name="q14_2" id="q14_K2" value="K" onChange="javascript:hier(14,'K',2,2);" /></div>
+			  <br />
+			  <div class="radios2">reading the book</div>
+			  <div class="radios">
+			    <input type="radio" name="q14_1" id="q14_R1" value="R" onChange="javascript:hier(14,'R',1,2);"  />
+			    <input type="radio" name="q14_2" id="q14_R2" value="R" onChange="javascript:hier(14,'R',2,2);" /></div>
+			  <br />
+			  <div style="clear:both;"></div>
+			</div>
+			
+                        <!--<input name="q14_1" type="hidden" id="q14_1" value="R"/>
+                            <input name="q14_2" type="hidden" id="q14_2" value="K"/>-->
                     </p>
                     <p>
                         <label>
-                            <input type="button" name="Submit" id="Submit" value="Submit" onclick="myfunction();"/>
+                            <input type="button" name="Submit" id="Submit" value="Submit" onclick="modesCalc();"/>
                         </label>
                     </p>
                 </form>

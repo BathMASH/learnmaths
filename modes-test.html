@@ -22,11 +22,12 @@
 	font-weight:bold;
 }
 </style>
-<script type="text/javascript" src="assets/radiohier.js">
-</script>
+<script type="text/javascript" src="assets/radiohier.js"></script>
+<script type="text/javascript" src="assets/modesCalc.js"></script>
       <h2>Learning Modes</h2>
       <h3>So how do you prefer to learn?</h3>
-      <form id="form1" method="post" action="modes-results.php" onsubmit="return submitCheck();">
+      <!--      <form id="form1" method="post" action="modes-results.php" onsubmit="return submitCheck();">-->
+      <form id="form1" name="form1" onsubmit="return modesCalc();">
       <div id="form_sec1">
         <p>This test helps you investigate what methods you like to use when learning. The methods identified are<br />
           <strong>Visual</strong> - learn best using diagrams and charts<br />
@@ -230,7 +231,10 @@
         <div style="clear:both;"></div></div>
         <!-- end of section -->
 		
-          <div id="submitbutton" style="float:right;"><input type="submit" id="Submit" value="Submit" /></div> 
+          <div id="submitbutton" style="float:right;">
+	    <!--<input type="submit" id="Submit" value="Submit" />-->
+	    <input type="button" id="Submit" name="Submit" value="Submit" onclick="modesCalc();"/>
+	  </div> 
           <div id="prevbutton" style="float:left; display:none;"><input type="button" value="Previous" id="Previous" onClick="prevsection();" /></div> 
           <div id="nextbutton" style="float:right; display:none;"><input type="button" value="Next" id="Next" onClick="nextsection();" /></div> 
       </form>
