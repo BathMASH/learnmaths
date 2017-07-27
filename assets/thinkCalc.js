@@ -36,6 +36,8 @@ function thinkCalc(){
     //Switch Dcount direction
     Dcount = -Dcount;
 
+    console.log("Active-Reflective: " + Acount + ". Sensing-Intuitive: " + Bcount + ". Visual-Verbal: " + Ccount + ". Global-Sequential: " + Dcount + ".");
+
     //Calculations for output
     var words = {};
     var counts = {A: Acount, B: Bcount, C: Ccount, D: Dcount};

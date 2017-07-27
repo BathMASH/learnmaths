@@ -5,7 +5,7 @@
     <title>Learn Maths (from MASH)</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./assets/textresize.js"></script>
-    <script type="text/javascript" src="assets/radioswap.js"></script>
+    <script type="text/javascript" src="./assets/radioswap.js"></script>
     <script type="text/javascript" src="./assets/thinkCalc.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Molengo&amp;v1' rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1' rel='stylesheet' type='text/css'/>
@@ -68,13 +68,22 @@
 
       <div class="right1">
         <div class="body-text" id="content">
-
+	  
           <div id="everything">
 
 	    <form id="form1" name="form1" action="return thinkCalc();">
 	      <p>
 		Press the Submit button to see a sample response to the Thinking Styles test
-		<input name="A1" type="hidden" id="A1" value="1" />
+		<!--<input name="A1" type="hidden" id="A1" value="1" />-->
+		<div class="boxgr">I understand something better after I<br />
+		  <label>
+		    <input type="radio" name="A1" value="1" id="A1_0" onChange="javascript:swap('A1',0);"/>
+		    try it out</label>
+		  <br />
+		  <label>
+		    <input type="radio" name="A1" value="-1" id="A1_1" onChange="javascript:swap('A1',1);"/>
+		    think it through</label>
+		</div>
 		<input name="A2" type="hidden" id="A2" value="1" />
 		<input name="A3" type="hidden" id="A3" value="1" />
 		<input name="A4" type="hidden" id="A4" value="1" />
