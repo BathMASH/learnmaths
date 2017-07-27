@@ -9,11 +9,8 @@ html {
 	font-size: 1.2em;
 }
 a{
-	color:blue;
+	color:#603;
 	text-decoration:underline;
-}
-a:visited{
-	color:black;
 }
 .wrapper-main {
 	background-color: #fff;
