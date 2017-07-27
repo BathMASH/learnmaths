@@ -50,7 +50,8 @@ a{
 	background-repeat: no-repeat;
 }
 .wrapper-heading {
-	width: 900px;
+	height: 150px;
+	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	background-image: url(../images/heading.gif);
