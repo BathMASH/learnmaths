@@ -3,9 +3,12 @@
 ---
 {% include head-menu.html %}
 <!-- removed hash: include virtual="head-menu.html" -->
+<script type="text/javascript" src="assets/radioswap.js"></script>
+<script type="text/javascript" src="assets/thinkCalc.js"></script>
 <h2>Thinking Styles</h2>
 <h3>So how do you think about maths?</h3>
-<form id="form1" method="post" action="thinking-results.php">
+<div id="everything">
+<form id="form1" name="form1" onsubmit="return thinkCalc();">
   <div id="form_sec0">
     <p>This test helps you investigate how you think when learning. It measures four scales:<br />
       <strong>Active/Reflective; Sensing/Intuitive; Visual/Non-visual; Global/Sequential</strong><br />
@@ -396,7 +399,8 @@
       <label>
         <input type="radio" name="D11" value="-1" id="D11_1" onChange="javascript:swap('D11',1);"/>
         think of possible consequences or applications of the solution in a wide range of areas</label></div></div>
-  <div id="submitbutton" style="float:right;"><input type="submit" id="Submit" value="Submit" /></div> 
+  <div id="submitbutton" style="float:right;">
+    <input type="button" id="Submit" name="Submit" value="Submit" onclick="thinkCalc();"/></div> 
   <div id="prevbutton" style="float:left; display:none;"><input type="button" value="Previous" id="Previous" onclick="prevsection();" /></div> 
   <div id="nextbutton" style="float:right; display:none;"><input type="button" value="Next" id="Next" onclick="nextsection();" /></div> 
 </form>
