@@ -1,15 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Learn Maths (from MASH)</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="./assets/textresize.js"></script>
-    <script type="text/javascript" src="assets/radiohier.js"></script>
-    <script type="text/javascript" src="./assets/modesCalc.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Molengo&amp;v1' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1' rel='stylesheet' type='text/css'/>
-    <!--<script type="text/javascript">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Learn Maths (from MASH)</title>
+<link href="./css/main.css" rel="stylesheet" type="text/css"/>
+<script src="./assets/textresize.js" type="text/javascript"></script>
+<script src="assets/radiohier.js" type="text/javascript"></script>
+<script src="./assets/modesCalc.js" type="text/javascript"></script>
+<link href="http://fonts.googleapis.com/css?family=Molengo&amp;v1" rel="stylesheet" type="text/css"/>
+<link href="http://fonts.googleapis.com/css?family=Maven+Pro&amp;v1" rel="stylesheet" type="text/css"/>
+<!--<script type="text/javascript">
 
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-24626612-1']);
@@ -22,7 +23,7 @@
       })();
 
     </script>-->
-    <script>
+<script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
@@ -43,137 +44,130 @@
 <body>
 <div class="wrapper-heading" id="wrapper-heading">Learn Maths
     <div class="heading-right">
-        <a href="http://www.bath.ac.uk/study/mash"><img src="./images/mash.gif" width="120" height="60" alt="MASH"/></a>
-        <div class="textsizes"><a href="#" id="textnormal" title="text size normal"
-                                  style="font-size:13px;left:0px;">A</a><a href="#" id="textlarge"
-                                                                           title="text size larger"
-                                                                           style="font-size:15px;left:40px;">A</a><a
-                href="#" id="textlargest" title="text size largest" style="font-size:17px;left:80px;">A</a></div>
-    </div>
+<a href="http://www.bath.ac.uk/study/mash"><img alt="MASH" height="60" src="./images/mash.gif" width="120"/></a>
+<div class="textsizes"><a href="#" id="textnormal" style="font-size:13px;left:0px;" title="text size normal">A</a><a href="#" id="textlarge" style="font-size:15px;left:40px;" title="text size larger">A</a><a href="#" id="textlargest" style="font-size:17px;left:80px;" title="text size largest">A</a></div>
+</div>
 </div>
 <div class="wrapper-main" id="wrapper-main">
-    <div class="left1">
-        <div class="ics" id="ics" style=""></div>
-        <div class="menu" id="mainmenu">
-            <ul>
-                <li><a href="index.html">Introduction</a></li>
-                <li><a href="modes.html">Learning Modes</a></li>
-                <li><a href="thinking.html">Thinking Styles</a></li>
-                <li><a href="some-ideas.html">Some ideas</a></li>
-                <li><a href="further-reading.html">Further reading</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="right1">
-        <div class="body-text" id="content">
-
-            <div id="everything">
-                <form id="form1" name="form1" onsubmit="return modesCalc();">
-                    <p>
+<div class="left1">
+<div class="ics" id="ics" style=""></div>
+<div class="menu" id="mainmenu">
+<ul>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="modes.html">Learning Modes</a></li>
+<li><a href="thinking.html">Thinking Styles</a></li>
+<li><a href="some-ideas.html">Some ideas</a></li>
+<li><a href="further-reading.html">Further reading</a></li>
+</ul>
+</div>
+</div>
+<div class="right1">
+<div class="body-text" id="content">
+<div id="everything">
+<form id="form1" name="form1" onsubmit="return modesCalc();">
+<p>
                         Press the Submit button to see a sample response to the Learning Modes test
         <!-- Question 1-->
-        <div class="boxgr">
-        <div class="radiosq">I remember best by...</div><div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;</div><br />
-        <div class="radios2">summarising information in a chart or diagram</div>
-        <div class="radios"><input type="radio" name="q1_1" id="q1_V1" value="V" onChange="javascript:hier(1,'V',1,4);" /><input type="radio" name="q1_2" id="q1_V2" value="V" onChange="javascript:hier(1,'V',2,4);" /><input type="radio" name="q1_3" id="q1_V3" value="V" onChange="javascript:hier(1,'V',3,4);" /><input type="radio" name="q1_4" id="q1_V4" value="V" onChange="javascript:hier(1,'V',4,4);" /></div>
-        <br />
-        <div class="radios2">telling someone else the information</div>
-        <div class="radios"><input type="radio" name="q1_1" id="q1_A1" value="A" onChange="javascript:hier(1,'A',1,4);" /><input type="radio" name="q1_2" id="q1_A2" value="A" onChange="javascript:hier(1,'A',2,4);" /><input type="radio" name="q1_3" id="q1_A3" value="A" onChange="javascript:hier(1,'A',3,4);" /><input type="radio" name="q1_4" id="q1_A4" value="A" onChange="javascript:hier(1,'A',4,4);" /></div>
-        <br />
-        <div class="radios2">writing out a short summary and reading it again</div>
-        <div class="radios"><input type="radio" name="q1_1" id="q1_R1" value="R" onChange="javascript:hier(1,'R',1,4);" /><input type="radio" name="q1_2" id="q1_R2" value="R" onChange="javascript:hier(1,'R',2,4);" /><input type="radio" name="q1_3" id="q1_R3" value="R" onChange="javascript:hier(1,'R',3,4);" /><input type="radio" name="q1_4" id="q1_R4" value="R" onChange="javascript:hier(1,'R',4,4);" /></div>
-        <br />
-        <div class="radios2">writing out the information repeatedly</div>
-        <div class="radios"><input type="radio" name="q1_1" id="q1_K1" value="K" onChange="javascript:hier(1,'K',1,4);" /><input type="radio" name="q1_2" id="q1_K2" value="K" onChange="javascript:hier(1,'K',2,4);" /><input type="radio" name="q1_3" id="q1_K3" value="K" onChange="javascript:hier(1,'K',3,4);" /><input type="radio" name="q1_4" id="q1_K4" value="K" onChange="javascript:hier(1,'K',4,4);" /></div>
-        <br />
-        <div style="clear:both;"></div></div>
-
-                        <!--<input name="q1_1" type="hidden" id="q1_1" value="A"/>
+<div class="boxgr">
+<div class="radiosq">I remember best by...</div><div class="radios" style="font-size:1em;">preference:   1    2   3   4  </div><br/>
+<div class="radios2">summarising information in a chart or diagram</div>
+<div class="radios"><input id="q1_V1" name="q1_1" onchange="javascript:hier(1,'V',1,4);" type="radio" value="V"/><input id="q1_V2" name="q1_2" onchange="javascript:hier(1,'V',2,4);" type="radio" value="V"/><input id="q1_V3" name="q1_3" onchange="javascript:hier(1,'V',3,4);" type="radio" value="V"/><input id="q1_V4" name="q1_4" onchange="javascript:hier(1,'V',4,4);" type="radio" value="V"/></div>
+<br/>
+<div class="radios2">telling someone else the information</div>
+<div class="radios"><input id="q1_A1" name="q1_1" onchange="javascript:hier(1,'A',1,4);" type="radio" value="A"/><input id="q1_A2" name="q1_2" onchange="javascript:hier(1,'A',2,4);" type="radio" value="A"/><input id="q1_A3" name="q1_3" onchange="javascript:hier(1,'A',3,4);" type="radio" value="A"/><input id="q1_A4" name="q1_4" onchange="javascript:hier(1,'A',4,4);" type="radio" value="A"/></div>
+<br/>
+<div class="radios2">writing out a short summary and reading it again</div>
+<div class="radios"><input id="q1_R1" name="q1_1" onchange="javascript:hier(1,'R',1,4);" type="radio" value="R"/><input id="q1_R2" name="q1_2" onchange="javascript:hier(1,'R',2,4);" type="radio" value="R"/><input id="q1_R3" name="q1_3" onchange="javascript:hier(1,'R',3,4);" type="radio" value="R"/><input id="q1_R4" name="q1_4" onchange="javascript:hier(1,'R',4,4);" type="radio" value="R"/></div>
+<br/>
+<div class="radios2">writing out the information repeatedly</div>
+<div class="radios"><input id="q1_K1" name="q1_1" onchange="javascript:hier(1,'K',1,4);" type="radio" value="K"/><input id="q1_K2" name="q1_2" onchange="javascript:hier(1,'K',2,4);" type="radio" value="K"/><input id="q1_K3" name="q1_3" onchange="javascript:hier(1,'K',3,4);" type="radio" value="K"/><input id="q1_K4" name="q1_4" onchange="javascript:hier(1,'K',4,4);" type="radio" value="K"/></div>
+<br/>
+<div style="clear:both;"></div></div>
+<!--<input name="q1_1" type="hidden" id="q1_1" value="A"/>
                         <input name="q1_2" type="hidden" id="q1_2" value="R"/>
                         <input name="q1_3" type="hidden" id="q1_3" value="V"/>
                         <input name="q1_4" type="hidden" id="q1_4" value="K"/>-->
-                        <input name="q2_1" type="hidden" id="q2_1" value="A"/>
-                        <input name="q2_2" type="hidden" id="q2_2" value="R"/>
-                        <input name="q3_1" type="hidden" id="q3_1" value="K"/>
-                        <input name="q3_2" type="hidden" id="q3_2" value="A"/>
-                        <input name="q3_3" type="hidden" id="q3_3" value="V"/>
-                        <input name="q3_4" type="hidden" id="q3_4" value="R"/>
-                        <input name="q4_1" type="hidden" id="q4_1" value="R"/>
-                        <input name="q4_2" type="hidden" id="q4_2" value="A"/>
-                        <input name="q4_3" type="hidden" id="q4_3" value="K"/>
-                        <input name="q5_1" type="hidden" id="q5_1" value="R"/>
-                        <input name="q5_2" type="hidden" id="q5_2" value="A"/>
-                        <input name="q5_3" type="hidden" id="q5_3" value="V"/>
-                        <input name="q5_4" type="hidden" id="q5_4" value="K"/>
-                        <input name="q6_1" type="hidden" id="q6_1" value="A"/>
-                        <input name="q6_2" type="hidden" id="q6_2" value="V"/>
-                        <input name="q6_3" type="hidden" id="q6_3" value="R"/>
-                        <input name="q6_4" type="hidden" id="q6_4" value="K"/>
-                        <input name="q7_1" type="hidden" id="q7_1" value="R"/>
-                        <input name="q7_2" type="hidden" id="q7_2" value="V"/>
-                        <input name="q7_3" type="hidden" id="q7_3" value="K"/>
-                        <input name="q8_1" type="hidden" id="q8_1" value="V"/>
-                        <input name="q8_2" type="hidden" id="q8_2" value="A"/>
-                        <input name="q8_3" type="hidden" id="q8_3" value="R"/>
-                        <input name="q9_1" type="hidden" id="q9_1" value="K"/>
-                        <input name="q9_2" type="hidden" id="q9_2" value="R"/>
-                        <input name="q9_3" type="hidden" id="q9_3" value="V"/>
-                        <input name="q9_4" type="hidden" id="q9_4" value="A"/>
-                        <input name="q10_1" type="hidden" id="q10_1" value="A"/>
-                        <input name="q10_2" type="hidden" id="q10_2" value="V"/>
-                        <input name="q10_3" type="hidden" id="q10_3" value="K"/>
-                        <input name="q11_1" type="hidden" id="q11_1" value="K"/>
-                        <input name="q11_2" type="hidden" id="q11_2" value="A"/>
-                        <input name="q11_3" type="hidden" id="q11_3" value="R"/>
-                        <input name="q11_4" type="hidden" id="q11_4" value="V"/>
-			<!-- Question 12 -->
-        <div class="boxlg">
-        <div class="radiosq">If someone doesn't understand something I've said I'm more likely to...</div>
-        <div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;</div><br />
-        <div class="radios2">use diagrams to try to explain (if possible)</div>
-        <div class="radios"><input type="radio" name="q12_1" id="q12_V1" value="V" onChange="javascript:hier(12,'V',1,3);" /><input type="radio" name="q12_2" id="q12_V2" value="V" onChange="javascript:hier(12,'V',2,3);" /><input type="radio" name="q12_3" id="q12_V3" value="V" onChange="javascript:hier(12,'V',3,3);" /></div><br />
-        <div class="radios2">rephrase my explanation until they understand</div>
-        <div class="radios"><input type="radio" name="q12_1" id="q12_A1" value="A" onChange="javascript:hier(12,'A',1,3);" /><input type="radio" name="q12_2" id="q12_A2" value="A" onChange="javascript:hier(12,'A',2,3);" /><input type="radio" name="q12_3" id="q12_A3" value="A" onChange="javascript:hier(12,'A',3,3);" /></div><br />
-        <div class="radios2">use my hands to try to explain, or if that fails start waving my arms around</div>
-        <div class="radios"><input type="radio" name="q12_1" id="q12_K1" value="K" onChange="javascript:hier(12,'K',1,3);" /><input type="radio" name="q12_2" id="q12_K2" value="K" onChange="javascript:hier(12,'K',2,3);" /><input type="radio" name="q12_3" id="q12_K3" value="K" onChange="javascript:hier(12,'K',3,3);" /></div>
-        <div style="clear:both;"></div>
-        </div>
-                        <!--<input name="q12_1" type="hidden" id="q12_1" value="V"/>
+<input id="q2_1" name="q2_1" type="hidden" value="A"/>
+<input id="q2_2" name="q2_2" type="hidden" value="R"/>
+<input id="q3_1" name="q3_1" type="hidden" value="K"/>
+<input id="q3_2" name="q3_2" type="hidden" value="A"/>
+<input id="q3_3" name="q3_3" type="hidden" value="V"/>
+<input id="q3_4" name="q3_4" type="hidden" value="R"/>
+<input id="q4_1" name="q4_1" type="hidden" value="R"/>
+<input id="q4_2" name="q4_2" type="hidden" value="A"/>
+<input id="q4_3" name="q4_3" type="hidden" value="K"/>
+<input id="q5_1" name="q5_1" type="hidden" value="R"/>
+<input id="q5_2" name="q5_2" type="hidden" value="A"/>
+<input id="q5_3" name="q5_3" type="hidden" value="V"/>
+<input id="q5_4" name="q5_4" type="hidden" value="K"/>
+<input id="q6_1" name="q6_1" type="hidden" value="A"/>
+<input id="q6_2" name="q6_2" type="hidden" value="V"/>
+<input id="q6_3" name="q6_3" type="hidden" value="R"/>
+<input id="q6_4" name="q6_4" type="hidden" value="K"/>
+<input id="q7_1" name="q7_1" type="hidden" value="R"/>
+<input id="q7_2" name="q7_2" type="hidden" value="V"/>
+<input id="q7_3" name="q7_3" type="hidden" value="K"/>
+<input id="q8_1" name="q8_1" type="hidden" value="V"/>
+<input id="q8_2" name="q8_2" type="hidden" value="A"/>
+<input id="q8_3" name="q8_3" type="hidden" value="R"/>
+<input id="q9_1" name="q9_1" type="hidden" value="K"/>
+<input id="q9_2" name="q9_2" type="hidden" value="R"/>
+<input id="q9_3" name="q9_3" type="hidden" value="V"/>
+<input id="q9_4" name="q9_4" type="hidden" value="A"/>
+<input id="q10_1" name="q10_1" type="hidden" value="A"/>
+<input id="q10_2" name="q10_2" type="hidden" value="V"/>
+<input id="q10_3" name="q10_3" type="hidden" value="K"/>
+<input id="q11_1" name="q11_1" type="hidden" value="K"/>
+<input id="q11_2" name="q11_2" type="hidden" value="A"/>
+<input id="q11_3" name="q11_3" type="hidden" value="R"/>
+<input id="q11_4" name="q11_4" type="hidden" value="V"/>
+<!-- Question 12 -->
+<div class="boxlg">
+<div class="radiosq">If someone doesn't understand something I've said I'm more likely to...</div>
+<div class="radios" style="font-size:1em;">preference:   1    2   3  </div><br/>
+<div class="radios2">use diagrams to try to explain (if possible)</div>
+<div class="radios"><input id="q12_V1" name="q12_1" onchange="javascript:hier(12,'V',1,3);" type="radio" value="V"/><input id="q12_V2" name="q12_2" onchange="javascript:hier(12,'V',2,3);" type="radio" value="V"/><input id="q12_V3" name="q12_3" onchange="javascript:hier(12,'V',3,3);" type="radio" value="V"/></div><br/>
+<div class="radios2">rephrase my explanation until they understand</div>
+<div class="radios"><input id="q12_A1" name="q12_1" onchange="javascript:hier(12,'A',1,3);" type="radio" value="A"/><input id="q12_A2" name="q12_2" onchange="javascript:hier(12,'A',2,3);" type="radio" value="A"/><input id="q12_A3" name="q12_3" onchange="javascript:hier(12,'A',3,3);" type="radio" value="A"/></div><br/>
+<div class="radios2">use my hands to try to explain, or if that fails start waving my arms around</div>
+<div class="radios"><input id="q12_K1" name="q12_1" onchange="javascript:hier(12,'K',1,3);" type="radio" value="K"/><input id="q12_K2" name="q12_2" onchange="javascript:hier(12,'K',2,3);" type="radio" value="K"/><input id="q12_K3" name="q12_3" onchange="javascript:hier(12,'K',3,3);" type="radio" value="K"/></div>
+<div style="clear:both;"></div>
+</div>
+<!--<input name="q12_1" type="hidden" id="q12_1" value="V"/>
                         <input name="q12_2" type="hidden" id="q12_2" value="K"/>
                         <input name="q12_3" type="hidden" id="q12_3" value="A"/>-->
-                        <input name="q13_1" type="hidden" id="q13_1" value="V"/>
-                        <input name="q13_2" type="hidden" id="q13_2" value="R"/>
-			<div class="boxlg">
-			  <div class="radiosq">I remember the storyline better after...</div>
-			  <div class="radios" style="font-size:1em;">preference: &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;</div><br />
-			  <div class="radios2">watching the film</div>
-			  <div class="radios">
-			    <input type="radio" name="q14_1" id="q14_K1" value="K" onChange="javascript:hier(14,'K',1,2);"  />
-			    <input type="radio" name="q14_2" id="q14_K2" value="K" onChange="javascript:hier(14,'K',2,2);" /></div>
-			  <br />
-			  <div class="radios2">reading the book</div>
-			  <div class="radios">
-			    <input type="radio" name="q14_1" id="q14_R1" value="R" onChange="javascript:hier(14,'R',1,2);"  />
-			    <input type="radio" name="q14_2" id="q14_R2" value="R" onChange="javascript:hier(14,'R',2,2);" /></div>
-			  <br />
-			  <div style="clear:both;"></div>
-			</div>
-			
-                        <!--<input name="q14_1" type="hidden" id="q14_1" value="R"/>
+<input id="q13_1" name="q13_1" type="hidden" value="V"/>
+<input id="q13_2" name="q13_2" type="hidden" value="R"/>
+<div class="boxlg">
+<div class="radiosq">I remember the storyline better after...</div>
+<div class="radios" style="font-size:1em;">preference:   1    2  </div><br/>
+<div class="radios2">watching the film</div>
+<div class="radios">
+<input id="q14_K1" name="q14_1" onchange="javascript:hier(14,'K',1,2);" type="radio" value="K"/>
+<input id="q14_K2" name="q14_2" onchange="javascript:hier(14,'K',2,2);" type="radio" value="K"/></div>
+<br/>
+<div class="radios2">reading the book</div>
+<div class="radios">
+<input id="q14_R1" name="q14_1" onchange="javascript:hier(14,'R',1,2);" type="radio" value="R"/>
+<input id="q14_R2" name="q14_2" onchange="javascript:hier(14,'R',2,2);" type="radio" value="R"/></div>
+<br/>
+<div style="clear:both;"></div>
+</div>
+<!--<input name="q14_1" type="hidden" id="q14_1" value="R"/>
                             <input name="q14_2" type="hidden" id="q14_2" value="K"/>-->
-                    </p>
-                    <p>
-                        <label>
-                            <input type="button" name="Submit" id="Submit" value="Submit" onclick="modesCalc();"/>
-                        </label>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
+</p>
+<p>
+<label>
+<input id="Submit" name="Submit" onclick="modesCalc();" type="button" value="Submit"/>
+</label>
+</p>
+</form>
+</div>
+</div>
+</div>
 </div>
 <div class="footer" id="footer">Created by Andrew Kennedy as part of a summer internship with sigma-sw &amp; MASH</div>
 
+<script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>

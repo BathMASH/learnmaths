@@ -1,28 +1,25 @@
-<HTML>
-<HEAD>
-<TITLE>jsMath (Test):  jsMath Test Page</TITLE>
+<html>
+<head>
+<title>jsMath (Test):  jsMath Test Page</title>
 <!-- Copyright (c) 2007 by Davide P. Cervone.  All rights reserved. -->
 <!-- *Document-Format:  jsMath -->
 <!-- *Navigation-Data:-->
-</HEAD>
-<BODY>
-
+</head>
+<body>
 <!-- *Navigation-links -->
-<TABLE WIDTH="100%" BORDER="1" CELLPADDING="2" CELLSPACING="1">
-<TR><TD BGCOLOR="#B8B8B8"><TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
-<TR><TD WIDTH="20%" ALIGN="LEFT" NOWRAP></TD>
-<TD ALIGN="CENTER" WIDTH="60%"><!
-><NOBR><B><SMALL><A HREF="../welcome.html">jsMath</A> (Test)</SMALL></B></NOBR><!
-></TD>
-<TD ALIGN="RIGHT" WIDTH="20%" HEIGHT="25" NOWRAP><!
-></TD></TR></TABLE>
-</TD></TR></TABLE>
+<table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><td bgcolor="#B8B8B8"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td align="LEFT" nowrap="" width="20%"></td>
+<td align="CENTER" width="60%"><!--
+--><nobr><b><small><a href="../welcome.html">jsMath</a> (Test)</small></b></nobr><!--
+--></td>
+<td align="RIGHT" height="25" nowrap="" width="20%"><!--
+--></td></tr></table>
+</td></tr></table>
 <p>
-<!BR>
-
+<!--BR-->
 <!-- *Begin-Document-Body -->
-
-<SCRIPT>
+<script>
   jsMath = {
     Controls: {
       cookie: {scale: 133},
@@ -34,81 +31,69 @@
       macros: {warning: ["Macro","\\color{##00CC00}{\\rm jsMath\\ appears\\ to\\ be\\  working!}",1]}
     }}
   }
-</SCRIPT>
-<SCRIPT SRC="../plugins/noImageFonts.js"></SCRIPT>
-<SCRIPT SRC="../jsMath.js"></SCRIPT>
-<NOSCRIPT>
-<DIV STYLE="color:#CC0000; text-align:center">
-<B>Warning: <A HREF="http://www.math.union.edu/locate/jsMath">jsMath</A>
-requires JavaScript to process the mathematics on this page.<BR>
-If your browser supports JavaScript, be sure it is enabled.<B>
-</DIV>
-<HR>
-</NOSCRIPT>
-
-<BLOCKQUOTE>
-
-<DIV STYLE="float:right; width:auto; margin-top:.5em">
-<INPUT TYPE="button" VALUE="Check for Updates" ONCLICK="jsMath.Controls.CheckVersion()">
-</DIV>
-
-<H1>jsMath Test Page</H1>
+</script>
+<script src="../plugins/noImageFonts.js"></script>
+<script src="../jsMath.js"></script>
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.math.union.edu/locate/jsMath">jsMath</a>
+requires JavaScript to process the mathematics on this page.<br/>
+If your browser supports JavaScript, be sure it is enabled.<b>
+</b></b></div>
+<hr/>
+</noscript>
+<blockquote>
+<div style="float:right; width:auto; margin-top:.5em">
+<input onclick="jsMath.Controls.CheckVersion()" type="button" value="Check for Updates"/>
+</div>
+<h1>jsMath Test Page</h1>
 
 If you see typeset mathematics below, then jsMath is working.  If you see
 TeX code instead, jsMath is not working for you.
 <p>
 <!------------------------------------------------------------------------>
-<HR>
-
-
-<DIV CLASS="math">
+<hr/>
+<div class="math">
 \left(\, \sum_{k=1}^n a_k b_k \right)^2 \le
 \left(\, \sum_{k=1}^n a_k^2 \right) \left(\, \sum_{k=1}^n b_k^2 \right)
-</DIV>
+</div>
 <p>
-
-<DIV CLASS="math" STYLE="color:red">
-\warning{ &nbsp; &nbsp; &nbsp; jsMath is not working! &nbsp; &nbsp; &nbsp; }
-</DIV>
-
+<div class="math" style="color:red">
+\warning{       jsMath is not working!       }
+</div>
 <!------------------------------------------------------------------------>
-<HR>
+<hr/>
 <p>
 
-Once you have jsMath working properly, view the <A
-HREF="index-images.html">image mode test page</A> to make sure that the
+Once you have jsMath working properly, view the <a href="index-images.html">image mode test page</a> to make sure that the
 image fallback mode is working as well.
 
-</BLOCKQUOTE>
-
-<SCRIPT>
+</p></p></p></blockquote>
+<script>
 jsMath.Process(document);
-</SCRIPT>
-
+</script>
 <!-- *End-Document-Body -->
-
 <!-- *jsMath-Common-Footer -->
-<!BR><p>
-<HR SIZE="3">
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="98%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE"><TD BGCOLOR="#B8B8B8" WIDTH="50%">
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="8" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-
-<TD><IMG SRC="jsMath40.jpg" ALT="[HOME]" BORDER="1" WIDTH="40" HEIGHT="40" HSPACE="5"></TD>
-<TD><SMALL>jsMath web pages<BR>
-Created:  14 Feb 2007<BR>
+<!--BR--><p>
+<hr size="3"/>
+<table align="CENTER" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr valign="MIDDLE"><td bgcolor="#B8B8B8" width="50%">
+<table align="CENTER" border="0" cellpadding="0" cellspacing="8">
+<tr valign="MIDDLE">
+<td><img alt="[HOME]" border="1" height="40" hspace="5" src="jsMath40.jpg" width="40"/></td>
+<td><small>jsMath web pages<br/>
+Created:  14 Feb 2007<br/>
 <!-- hhmts start -->
 Last modified:  Feb 12, 2009 6:14:47 PM
 <!-- hhmts end -->
-<BR>
-Comments to:  <A HREF="mailto:dpvc@union.edu"><CODE>dpvc@union.edu</CODE></A><BR>
-</SMALL></TD>
-
-</TR></TABLE></TD>
-<TD WIDTH="100%" BGCOLOR="#B8B8B8">&nbsp;</TD>
-</TR></TABLE>
-<HR SIZE="3">
-
-</BODY>
-</HTML>
+<br/>
+Comments to:  <a href="mailto:dpvc@union.edu"><code>dpvc@union.edu</code></a><br/>
+</small></td>
+</tr></table></td>
+<td bgcolor="#B8B8B8" width="100%"> </td>
+</tr></table>
+<hr size="3"/>
+</p></p>
+<script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
+</body>
+</html>

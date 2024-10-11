@@ -48,18 +48,18 @@ try {jsMath = parent.jsMath} catch (err) {}
 <!----------------------------------->
 <div id="panel">
 <table border="0">
-<tr><td width="99%" nowrap>
-<input type="text" style="width:75%" id="url">
-<input type="button" value="Go" onclick="jsMath.SetURL()"></td>
-<td width="1%" nowrap>
+<tr><td nowrap="" width="99%">
+<input id="url" style="width:75%" type="text"/>
+<input onclick="jsMath.SetURL()" type="button" value="Go"/></td>
+<td nowrap="" width="1%">
 <!----------------------------------->
 <!--<input type="button" value="Debug" onclick="debug()">-->
 <!----------------------------------->
-<input type="button" value="Print"    id="print"   onclick="jsMath.Print()">
-<input type="button" value="Reload"   id="reload"  onclick="jsMath.Reload()">
-<input type="button" value="Go Local" id="goLocal" onclick="jsMath.GoLocal()">
-<input type="button" value="Empty"    id="empty"   onclick="jsMath.Empty()">
-<input type="button" value="Hide"     id="hide"    onclick="setTimeout('jsMath.Hide()',10)"></small></td></tr>
+<input id="print" onclick="jsMath.Print()" type="button" value="Print"/>
+<input id="reload" onclick="jsMath.Reload()" type="button" value="Reload"/>
+<input id="goLocal" onclick="jsMath.GoLocal()" type="button" value="Go Local"/>
+<input id="empty" onclick="jsMath.Empty()" type="button" value="Empty"/>
+<input id="hide" onclick="setTimeout('jsMath.Hide()',10)" type="button" value="Hide"/></td></tr>
 </table>
 </div>
 <script>
@@ -102,5 +102,7 @@ if (document.body.scrollHeight < 1) {
 
 }
 </script>
+
+<script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
